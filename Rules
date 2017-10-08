@@ -4,6 +4,18 @@ compile '/**/*.html' do
   layout '/default.*'
 end
 
+# ignore partials
+compile '/**/_*.scss' do
+  nil
+end
+
+# compile scss to css
+# get file path -> remove extension -> route to /css -> write .css
+compile '/scss/*.scss' do
+  filter :sass, syntax: :scss
+  write item.identifier.without_ext.to_s.gsub('scss/', 'css/') + '.css'
+end
+
 # This is an example rule that matches Markdown (.md) files, and filters them
 # using the :kramdown filter. It is commented out by default, because kramdown
 # is not bundled with Nanoc or Ruby.
