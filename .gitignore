@@ -4,3 +4,4 @@ output
 public
 tmp
 node_modules
+npm-debug.log
