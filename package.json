@@ -7,7 +7,8 @@
     "compile": "bin/compile.js",
     "watch": "onchange 'content/**/*' 'layouts/**/*' 'lib/**/*' 'Gemfile' 'nanoc.yaml' 'Rules' -- npm run compile",
     "livereload": "browser-sync start --server 'output' --files './output/**/*'",
-    "dev": "run-p watch livereload"
+    "dev": "run-p watch livereload",
+    "deploy": "cd output; git add *; git commit -m 'update portfolio output'; git push"
   },
   "author": "objectsforheads",
   "devDependencies": {
