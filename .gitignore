@@ -1,5 +1,6 @@
 .sass-cache
 crash.log
 output
+public
 tmp
 node_modules

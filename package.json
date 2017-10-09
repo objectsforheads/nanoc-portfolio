@@ -4,16 +4,26 @@
   "description": "personal portfolio for objectsforheads",
   "dependencies": {},
   "scripts": {
-    "compile": "bin/compile.js",
+    "compile": "bundle exec nanoc compile",
     "watch": "onchange 'content/**/*' 'layouts/**/*' 'lib/**/*' 'Gemfile' 'nanoc.yaml' 'Rules' -- npm run compile",
     "livereload": "browser-sync start --server 'output' --files './output/**/*'",
     "dev": "run-p watch livereload",
-    "deploy": "cd output; git add *; git commit -m 'update portfolio output'; git push"
+    "fork-output": "rm -rf public/*; cp -r output/* public/",
+    "process-js": "babel public/js --out-dir public/js && minify public/js -d public/js",
+    "process-css": "postcss public/css/**/* -d public/css -u autoprefixer --no-map && cleancss -o public/**/*.css public/**/*.css",
+    "git-commit": "cd public; git add *; git commit -m 'update portfolio static output'; git push",
+    "deploy": "bundle exec nanoc compile && npm run fork-output && run-p process-js process-css && npm run git-commit"
   },
   "author": "objectsforheads",
   "devDependencies": {
+    "autoprefixer": "^7.1.5",
+    "babel-cli": "^6.26.0",
+    "babel-minify": "^0.2.0",
+    "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.13",
+    "clean-css-cli": "^4.1.10",
     "npm-run-all": "^4.1.1",
-    "onchange": "^3.2.1"
+    "onchange": "^3.2.1",
+    "postcss-cli": "^4.1.1"
   }
 }
