@@ -1,0 +1,97 @@
+---
+title: Home
+---
+
+<%= @items['/partials/homepage/nav.*'].compiled_content %>
+
+<%= @items['/partials/homepage/jumbotron.*'].compiled_content %>
+
+div.panel.post-jumbotron.main.anchor_site-nav.on-black
+  div.site-nav.text-center.on-black
+    i.fa.fa-bars.nav-toggle
+    a[
+      href="#"
+    ]
+      span.site-title ofh
+  div.anchor_sticker
+
+  div.panel-content
+    div.pane
+      markdown:
+        ## About
+        {: .sitenav-heading}
+
+        ### Professionally,
+
+        - full-stack developer specializing in JavaScript
+        - sweats the small stuff so that you don't have to
+        - fond of CSS trick shot 100x point bonuses
+        - web polyglot (transcompilers welcome)
+        - optimize everything, then optimize that
+        - the user experience is worth every effort
+        - [available for work](#collaboration)
+
+        ### Personally,
+
+        - Given the choice between cats and dogs, would pick fish
+        - Once ate 23 tacos in one go because it seemed like a good idea at the time
+        - Enjoys ~getting lost~ road trips, photography, and medieval combat
+        - Habitual hoarder of all things analog, weird, and knick-knackery
+
+    div.pane
+      <%= @items['/partials/homepage/work.*'].compiled_content %>
+
+    div.pane
+      markdown:
+        ## Collaboration
+        {: .sitenav-heading}
+
+        I'm always up for making something cool, so get in touch with me at [hello@objectsforheads.com](mailto:&#104;e&#108;&#108;o&#064;o&#098;&#106;e&#099;&#116;&#115;&#102;o&#114;&#104;e&#097;&#100;&#115;&#046;&#099;o&#109;){:title="email me"}.
+
+        Most of my proficiencies focus on HTML/CSS/JavaScript and variations thereof. People tend to hire me when they want to:
+
+        **Start a web presence**{:class="blockify"}
+
+        I work with small businesses, onboarding them onto the web. This often means I'll:
+
+        - Discuss and determine what they want to get out of their web presence and their options for getting there
+        - Develop web-based methods and systems that help them fulfill their business objectives
+        - Integrate their business into a sensible CMS or platform like Wordpress or Shopify and ensure they can maintain it
+
+        **Develop a web app**{:class="blockify"}
+
+        I also build web apps, which include things like interactive marketing campaigns and initiatives, single page applications, and more complex, full-featured platforms. For these kinds of projects, we'll work together to:
+
+        - Break the project down into manageable components and draw out a road map to being launch-ready
+        - Determine the metrics for success for each one and identify critical features, user funnels, and other data points
+        - Create a well-documented and structured code base that can be managed by future developers
+
+        People also hire me because I'm a developer knowledgeable in *x*, where *x* can refer to:
+
+        <% get_data('proficiencies').each do |proficiency| %>
+        - **<%= proficiency[0] %>:** <% proficiency[1].each do |subcategory| %><% subcategory[1].each do |skill| %><span class="skill"><%= skill %></span><% end %><% end %>
+        <% end %>
+
+        I'm stack-agnostic and ready to work with any technology I know and many I don't, so if I sound like your kind of developer, [get in touch](mailto:&#104;e&#108;&#108;o&#064;o&#098;&#106;e&#099;&#116;&#115;&#102;o&#114;&#104;e&#097;&#100;&#115;&#046;&#099;o&#109;){:title="email me"}.
+
+div.panel.bye.on-white
+  div.panel-content.absolute-center
+    div.pane.favorite-things.text-center.collapse
+      <%= @items['/partials/homepage/bye.*'].compiled_content %>
+
+  footer.text-right
+    p parting is such sweet sorrow
+
+    span.outlinks
+      a[
+        href="https://github.com/objectsforheads/"
+        target="_blank"
+      ]
+        | github
+      | &nbsp;| say hello, get in
+
+div.contact-button
+  a.contact-label[
+    href="mailto:&#104;e&#108;&#108;o&#064;o&#098;&#106;e&#099;&#116;&#115;&#102;o&#114;&#104;e&#097;&#100;&#115;&#046;&#099;o&#109;"
+  ]
+    | contact

@@ -1,0 +1,28 @@
+.scroll-lock {
+  overflow: hidden !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.blockify {
+  display: block !important;
+  margin-bottom: $standardMargin;
+}
+
+.mini-collapse {
+  margin-bottom: #{$standardMargin / 2} !important;
+}
+
+.collapse {
+  margin-bottom: 0 !important;
+}

@@ -1,0 +1,148 @@
+---
+name: projects
+kind: data
+data:
+  - title: Raddish
+    byline: food-sharing startup
+    features:
+      - ui/ux animation
+      - API integrations
+      - HTML
+      - Javascript/jQuery
+      - CSS (SASS)
+      - PHP
+      - MySQL
+    screenshots:
+      - :url: raddish01.jpg
+        :thumbnail: raddish01.jpg
+        :alt: Jackpot campaign homepage - desktop view
+
+      - :url: raddish02.jpg
+        :thumbnail: raddish02.jpg
+        :alt: Jackpot campaign homepage - mobile view
+
+      - :url: raddish-jackpot_compressed
+        :thumbnail: raddish-jackpot_compressed.jpg
+        :alt: Jackpot machine in action
+        :video: true
+    summary: developed <a href="http://www.radfriends.eatraddish.com" target="_blank" title="[link] Raddish Jackpot Campaign">promotional campaign</a>
+
+  - title: Listlyst
+    byline: game community site
+    features:
+      - Meteor.js (MongoDB, Node.js, Blaze)
+      - HTML
+      - CSS (SASS)
+      - JavaScript/jQuery
+      - Grunt
+      - nanoc (Ruby)
+      - Google Analytics
+      - API integrations
+    screenshots:
+      - :url: listlyst01.jpg
+        :alt: Listlyst API homepage
+
+      - :url: listlyst-api_compressed
+        :thumbnail: listlyst-api_compressed.jpg
+        :alt: Listlyst's interactive API documentation
+        :video: true
+
+      - :url: listlyst04.jpg
+        :alt: Listlyst deckbuilder homepage
+
+      - :url: listlyst07.jpg
+        :alt: Listlyst deckbuilder main
+
+      - :url: listlyst08.jpg
+        :alt: Listlyst deckbuilder deck display
+
+      - :url: kitlyst-deck_compressed
+        :thumbnail: kitlyst-deck_compressed.jpg
+        :alt: Listlyst deckbuilder - making a deck
+        :video: true
+
+      - :url: kitlyst-view_compressed
+        :thumbnail: kitlyst-view_compressed.jpg
+        :alt: Listlyst deckbuilder - viewing a deck
+        :video: true
+
+      - :url: spritelyst_compressed
+        :thumbnail: spritelyst_compressed.jpg
+        :alt: Spritelyst usage
+        :video: true
+    summary: designed & developed a <a href="https://github.com/objectsforheads/listlyst-deprecated" target="_blank" title="[link] Listlyst API">custom RESTful API</a>, designed & developed <a href="https://github.com/objectsforheads/kitlyst-deprecated" target="_blank" title="[link] Listlyst deckbuilder">interactive features</a>, coded automated <a href="http://spritelyst.objectsforheads.com" target="_blank" title="[link] animated Duelyst sprite resource">asset scraping and publishing</a>
+
+  - title: Pixel Art Academy
+    byline: learn-to-draw video game
+    features:
+      - Meteor.js (MongoDB, Node.js, Blaze)
+      - HTML
+      - CSS (SASS)
+      - JavaScript/jQuery
+      - Google Analytics
+      - API integrations
+    screenshots:
+      - :url: paa01.jpg
+        :alt: Pixel Art Academy landing page
+
+      - :url: paa02.jpg
+        :alt: Spectropolis the game
+
+      - :url: paa03.jpg
+        :alt: Spectropolis - guessing a reference
+
+      - :url: spectropolis_compressed
+        :thumbnail: spectropolis_compressed.jpg
+        :alt: promotional ZX Spectrum homage game
+        :video: true
+    summary: designed & developed <a href="https://pixelart.academy/about" target="_blank" title="[link] Pixel Art Academy Landing">main landing page</a>, developed <a href="https://github.com/Retronator/Spectropolis" target="_blank" title="[link] ZX Spectrum Homage Game">interactive promotional material</a>, coded in-game features
+
+  - title: league of feed
+    byline: interactive game infographic
+    screenshots:
+      - :url: lof01.jpg
+        :alt: League of Feed homepage
+
+      - :url: lof02.jpg
+        :alt: League of Feed infographic example
+
+      - :url: lof03.jpg
+        :alt: League of Feed about page
+
+      - :url: leagueoffeed_compressed
+        :thumbnail: leagueoffeed_compressed.jpg
+        :alt: League of Feed usage
+        :video: true
+    summary: designed & developed an <a href="https://github.com/objectsforheads/League-of-Feed" target="_blank" title="[link] infographic source code">interactive infographic</a> for the <a href="http://na.leagueoflegends.com/en/news/community/contests/riot-games-api-challenge-2016" target="_blank" title="[link] challenge information">Riot API Challenge</a>
+
+  - title: Starlore
+    byline: educational video game
+    screenshots:
+      - :url: starlore-start_compressed
+        :thumbnail: starlore-start_compressed.jpg
+        :alt: Starlore start screen
+        :video: true
+
+      - :url: starlore-constellation_compressed
+        :thumbnail: starlore-constellation_compressed.jpg
+        :alt: Starlore - finding a constellation
+        :video: true
+    summary: designed & developed a game
+
+  - title: Miscellany
+    byline: various other work
+    screenshots:
+      - :url: misc01.jpg
+        :alt: Bettina Warburg personal site
+
+      - :url: misc02.jpg
+        :alt: andthis splash page
+
+      - :url: misc03.jpg
+        :alt: Africa Talent Project landing page
+    summary: developed sites for BCG's DV Torque, Bettina Warburg, andthis, the <a href="http://africatalentproject.com/" target="_blank" title="[link] company landing page">Africa Talent Project</a>, and Entirely Me, consulted on UI direction for <a href="http://neonmusic.io/" target="_blank" title="[link] Booking app">Neon Music</a>
+
+  - title: Me
+    byline: a portfolio referencing itself
+    summary: designed & developed a personal portfolio
+---

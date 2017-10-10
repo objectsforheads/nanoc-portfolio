@@ -1,0 +1,83 @@
+[data-page="home"] {
+  .jumbotron {
+    background: $white;
+    z-index: 3;
+
+    // Accents
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        $black,
+        $black 3px,
+        $white 3px,
+        $white 6px
+      ) fixed;
+      opacity: 0.75;
+      z-index: 0;
+    }
+  }
+
+  .post-jumbotron {
+    padding-top: 15rem;
+  }
+
+  .sticker {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%,-50%);
+
+    &.fixed {
+      position: fixed;
+      top: 66.66%;
+    }
+  }
+
+  .job-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+    background: $white;
+    margin: 0;
+    line-height: 1;
+    padding: 0.25em;
+    z-index: 1;
+
+    &.fixed {
+      position: fixed;
+      top: 25%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .job-title {
+      font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .sticker {
+      width: 16rem;
+      height: 16rem;
+    }
+
+    .post-jumbotron {
+      padding-top: 9rem;
+    }
+    .upper, .middle, .lower {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .job-title {
+      font-size: 1.414rem;
+    }
+  }
+}

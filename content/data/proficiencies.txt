@@ -1,0 +1,62 @@
+---
+name: proficiencies
+kind: data
+data:
+  JavaScript:
+    Frameworks:
+      - Meteor.js
+      - Vue.js
+      - Knockout.js
+    Utilities:
+      - Underscore.js
+      - jQuery
+  "CSS/HTML":
+    "Processors & Compilers":
+      - SCSS
+      - LESS
+      - Stylus
+    Templating:
+      - Handlebars
+      - Twig
+      - Liquid
+      - ERB
+      - HAML
+      - Markdown
+    Frameworks:
+      - Foundation
+      - Bootstrap
+  Data:
+    "Management & Architecture":
+      - MongoDB
+      - MySQL
+    "Third-Party Integrations":
+      - RESTful APIs
+      - OAuth
+      - XML
+  Utilities:
+    Optimzation:
+      - Google Analytics
+      - Optimizely
+      - CrazyEgg
+    Design:
+      - Photoshop
+      - Xd
+      - Basalmiq
+    Testing:
+      - Selenium
+    Automation:
+      - Grunt
+      - Gulp
+    Package Management:
+      - NPM
+      - Composer
+  Platforms:
+    eCommerce:
+      - Magento 2
+      - Shopify
+    CMS:
+      - Craft CMS
+      - Wordpress
+      - Nanoc
+      - Ghost
+---

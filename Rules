@@ -14,26 +14,52 @@ preprocess do
 
 end
 
+# don't compile data
+compile '/data/**/*' do
+  nil
+end
+
+# compile but don't output partials
+compile '/partials/**/*.md' do
+  nil
+end
+
+compile '/partials/**/*.slim' do
+  filter :erb
+  filter :slim
+end
+
 # write /pages/* to /
-compile '/pages/**/*' do
+compile '/pages/**/*.md' do
   filter :erb
   filter :kramdown
   layout '/default.*'
   write item.identifier.without_ext.to_s.gsub('/pages/', '/') + '.html'
 end
 
+compile '/pages/**/*' do
+  write item.identifier.to_s.gsub('/pages', '')
+end
+
 # write post assets to the right directory
-compile '/posts/**/*' do
+compile '/posts/**/*.md' do
   filter :erb
   filter :kramdown
   layout '/default.*'
   write item.identifier.without_ext.to_s.gsub('posts/', 'bloggery/posts/') + '.html'
 end
 
-# fallback compilation of markdown files
+# fallback compilation of files
 compile '/**/*.md' do
   filter :erb
   filter :kramdown
+  layout '/default.*'
+  write item.identifier.without_ext.to_s + '.html'
+end
+
+compile '/**/*.slim' do
+  filter :erb
+  filter :slim
   layout '/default.*'
   write item.identifier.without_ext.to_s + '.html'
 end

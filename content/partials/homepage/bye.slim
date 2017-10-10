@@ -1,0 +1,38 @@
+---
+things:
+  - :img: cake
+    :alt: A slice of layer cake with a cherry on top
+
+  - :img: rex
+    :alt: The T-Rex from the Chrome game
+
+  - :img: gbc
+    :alt: A Gameboy Color
+
+  - :img: record
+    :alt: A record player
+
+  - :img: card
+    :alt: Card magic
+
+  - :img: taco
+    :alt: Taco Tuesdays
+---
+
+<% @item[:things].each_with_index do |thing, i| %>
+div.favorite-thing[
+  class="<% if i == 0 %>current<% end %>"
+]
+  div.thing
+    i.thing-sprite[
+      class="sprite-<%= thing[:img] %>"
+    ]
+      | <%= thing[:alt] %>
+<% end %>
+
+p
+  sup
+    i.fa.fa-music
+  | &nbsp;&nbsp;These are some of my favorite things&nbsp;&nbsp;
+  sup
+    i.fa.fa-music

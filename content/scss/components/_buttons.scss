@@ -1,0 +1,14 @@
+.btn {
+  display: block;
+  text-transform: uppercase;
+  font-family: $retro;
+  text-align: center;
+  line-height: 1.5;
+  transition: letter-spacing 150ms;
+
+  &:hover,
+  &:focus,
+  &:active {
+    letter-spacing: 3px;
+  }
+}

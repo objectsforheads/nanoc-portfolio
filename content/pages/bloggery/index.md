@@ -12,7 +12,3 @@ kind: page
 filed under <%= tags_for(post) %>
 
 <% end %>
-
-<% all_tags(sorted_articles).each do |tag| %>
-  <%= tag %>
-<% end %>

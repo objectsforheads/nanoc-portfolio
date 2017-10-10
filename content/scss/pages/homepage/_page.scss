@@ -1,0 +1,47 @@
+[data-page="home"] {
+    margin-bottom: 100vh;
+    overflow-x: hidden;
+
+    // HACK: yeah...
+    [id="collaboration"] ~ {
+      ul {
+        p {
+          margin: 0;
+        }
+
+        .skill:not(:last-child) {
+          &::after {
+            content: ', '
+          }
+        }
+      }
+    }
+}
+
+// Anchors are used to determine when to toggle fixed/not
+.anchor_job-title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(#{(0.25rem*2*2.828 + 2.828rem)/2}); // Bottom of the job-title
+}
+
+.anchor_job-title--fixed {
+  position: fixed;
+  top: 25%;
+  transform: translateY(#{(0.25rem*2*2.828 + 2.828rem)/2}); // Bottom of the job-title
+}
+
+.anchor_sticker {
+}
+
+.anchor_sticker--fixed {
+  position: fixed;
+  top: 66.66%;
+  transform: translateY(12rem); // Half of the sticker
+}
+
+@import 'jumbotron';
+@import 'nav';
+@import 'contact';
+@import 'projects';
+@import 'bye';

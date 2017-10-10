@@ -1,0 +1,75 @@
+html, body {
+  font-family: $serif;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $retro;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 2px;
+
+  a {
+    background: transparent !important; // Never underline
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  a {
+    font-weight: 400;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    a {
+      letter-spacing: 3px;
+    }
+  }
+}
+
+.byline {
+  text-transform: uppercase;
+  font-size: 0.66em;
+  display: block;
+  line-height: 1;
+}
+
+a {
+  font-weight: 700;
+  text-decoration: none;
+  background-position: 0 1.05em;
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+}
+
+strong {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+blockquote {
+  font-family: $serif;
+  text-align: center;
+  font-size: 1.25em;
+
+  padding: 0 3em;
+  @media (max-width: 500px) {
+    padding: 0 1.5em;
+  }
+}

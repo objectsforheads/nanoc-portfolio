@@ -1,0 +1,96 @@
+.bye {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+.favorite-things {
+  transform: translateY(50px); // around half the height since things are positioned absolutely
+  .fa {
+    animation: bounce 1.5s infinite ease-in-out;
+  }
+}
+
+.favorite-thing {
+  margin: auto;
+  position: absolute;
+  bottom: 4.5rem; // bottom text (1.5 margin + 1.5 lh) + padding (1rem)
+  width: 100%;
+  left: 0;
+  opacity: 0;
+  transition: opacity 300ms;
+
+  .thing {
+    display: block;
+    margin: auto;
+  }
+
+}
+
+.favorite-thing.current {
+  opacity: 1;
+
+  .thing {
+    animation: bounce 1.5s 1 ease-in-out;
+  }
+}
+
+.thing-sprite {
+    background-image: url(/homepage/images/things.png);
+    background-repeat: no-repeat;
+    margin: auto;
+    font-size: 0;
+    display: inline-block;
+}
+
+.sprite-cake {
+    width: 91px;
+    height: 102px;
+    background-position: -5px -5px;
+}
+
+.sprite-card {
+    width: 130px;
+    height: 81px;
+    background-position: -106px -5px;
+}
+
+.sprite-gbc {
+    width: 61px;
+    height: 113px;
+    background-position: -106px -96px;
+}
+
+.sprite-record {
+    width: 112px;
+    height: 85px;
+    background-position: -246px -5px;
+}
+
+.sprite-rex {
+    width: 103px;
+    height: 111px;
+    background-position: -177px -100px;
+}
+
+.sprite-taco {
+    width: 94px;
+    height: 81px;
+    background-position: -5px -221px;
+}
+
+.outlinks {
+  margin-right: 4.5rem;
+  line-height: 2;
+}

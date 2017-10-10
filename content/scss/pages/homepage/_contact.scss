@@ -1,0 +1,58 @@
+$envelopeBlue: blue;
+$envelopeRed: red;
+$envelopeWhite: #F7F4EF;
+.contact-button {
+  display: inline-block;
+  position: fixed;
+  width: 4rem;
+  height: 2rem;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+  cursor: pointer;
+  background: $envelopeWhite;
+  background: repeating-linear-gradient(
+    135deg,
+    $envelopeBlue 0.25rem,
+    $envelopeBlue 0.4375rem,
+    $envelopeWhite 0.4375rem,
+    $envelopeWhite 0.625rem,
+    $envelopeRed 0.625rem,
+    $envelopeRed 0.8125rem,
+    #e5e2d8 0.8125rem,
+    #e5e2d8 1rem
+  );
+  box-shadow: 0.125rem 0.125rem 0px 0px $black;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: $envelopeWhite;
+    width: 3.5rem;
+    height: 1.5rem;
+  }
+
+  .contact-label {
+    text-transform: uppercase;
+    font-family: $retro;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    line-height: 1;
+    z-index: 1;
+    color: $black;
+    font-weight: 400;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .contact-label {
+      animation: blink 1s steps(5, start) infinite;
+    }
+  }
+}

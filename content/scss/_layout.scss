@@ -3,3 +3,115 @@
   box-sizing: border-box;
   outline: none; // remember to explicitly define these!
 }
+
+html, body {
+  min-height: 100%;
+  background: $white;
+}
+
+// Panel behavior
+.panel {
+  min-height: 100vh;
+  background: $black;
+  z-index: 1;
+}
+
+.panel-content {
+  height: 100%;
+  min-height: 100vh;
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+  &.absolute-center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pane {
+    padding: 0 1rem;
+    margin-bottom: #{$standardMargin * 4};
+  }
+}
+
+.on-white {
+  background: $white;
+  color: $black;
+
+  a {
+    color: $black;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $blackHover;
+    }
+  }
+
+  p, ul, ol {
+    a {
+      &, &:active, &:visited {
+        background-image: linear-gradient($white 50%, $black 50%);
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        background-image: linear-gradient($white 50%, $blackHover 50%);
+      }
+    }
+  }
+
+  .btn {
+    color: $white;
+    background: $black;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+    }
+  }
+}
+
+.on-black {
+  background: $black;
+  color: $white;
+
+  a {
+    color: $white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $whiteHover;
+    }
+  }
+
+  p, ul, ol {
+    a {
+      background-position: 0 1.05em;
+      background-size: 1px 1px;
+      background-repeat: repeat-x;
+
+      &, &:active, &:visited {
+        background-image: linear-gradient($black 50%, $white 50%);
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        background-image: linear-gradient($black 50%, $whiteHover 50%);
+      }
+    }
+  }
+
+  .btn {
+    color: $black;
+    background: $white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $black;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+---
+image_dir: "/homepage/images/"
+video_dir: "/homepage/videos/"
+---
+
+h2#work.sitenav-heading Work
+
+blockquote
+  em Everything is built with consideration for the user experience. After all, if not for our users, then for whom do we build this pleasant web?
+
+<% get_data('projects').each do |project| %>
+div.project
+  h3.sitenav-subheading#project_<%= slugify(project[:title]) %>
+    | <%= project[:title] %>
+    span.byline <%= project[:byline] %>
+
+  p <%= project[:summary] %>
+
+  <% if project[:screenshots] %>
+  div.project-screenshots.text-center
+    <% project[:screenshots].each do |screenshot| %>
+      <% if screenshot[:video] %>
+      a.project-screenshot[
+        href="<%= screenshot[:url] %>"
+        target="_blank"
+        title="<%=screenshot[:alt] %>"
+        data-type="video"
+        data-remodal-target="modal_<%= slugify(screenshot[:url]) %>"
+      ]
+        div.screenshot__video
+          div.screenshot__video-bg[
+            style="background-image: url('<%= @item[:video_dir] %><%= screenshot[:thumbnail] %>');"
+          ]
+          i.fa.fa-play-circle
+
+      <% else %>
+      a.project-screenshot[
+        href="<%= @item[:image_dir] %><%= screenshot[:url] %>"
+        target="_blank"
+        title="[Screenshot] <%= screenshot[:alt] %>"
+        data-type="screenshot"
+        data-remodal-target="modal_<%= slugify(screenshot[:url]) %>"
+      ]
+        div.screenshot__image[
+          style="background-image: url('<%= @item[:image_dir] %><%= screenshot[:url] %>');"
+        ]
+      <% end %>
+    <% end %>
+
+    <% project[:screenshots].each do |screenshot| %>
+      div.remodal[
+        data-remodal-id="modal_<%= slugify(screenshot[:url]) %>"
+        data-remodal-options="modifier: <% if screenshot[:video] %>isVideo<% else %>isImage<% end %>"
+      ]
+        button.remodal-close[
+          data-remodal-action="close"
+        ]
+        <% if screenshot[:video] %>
+        div.video-wrapper
+          video#<%= slugify(screenshot[:url]) %>[
+            playsinline
+            paused
+            muted
+            loop
+          ]
+            source[
+              src="<%= @item[:video_dir] %><%= screenshot[:url] %>.mp4"
+              type="video/mp4"
+            ]
+            source[
+              src="<%= @item[:video_dir] %><%= screenshot[:url] %>.webm"
+              type="video/webm"
+            ]
+          div.video-status
+            i.fa.fa-play-circle.video-paused.video-status-icon
+            i.fa.fa-pause-circle.video-playing.video-status-icon
+        <% else %>
+        img[
+          src="<%= @item[:image_dir] %><%= screenshot[:url] %>"
+          alt="<%= @item[:image_dir] %><%= screenshot[:alt] %>"
+        ]
+        <% end %>
+    <% end%>
+  <% end %>
+
+<% end %>
+
+div.project.emphasis
+  h3.sitenav-subheading.h2#project_you
+    | You
+    span.byline your project here
+
+  p the possibilities may be endless, but the project will definitely be well-scoped
+
+  a.btn.cta[
+    href="mailto:&#104;e&#108;&#108;o&#064;o&#098;&#106;e&#099;&#116;&#115;&#102;o&#114;&#104;e&#097;&#100;&#115;&#046;&#099;o&#109;"
+  ]
+    | Onward, to adventure!
+

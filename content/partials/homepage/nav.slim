@@ -1,0 +1,53 @@
+nav.nav-wrapper.on-white
+  i.fa.fa-times.nav-toggle
+
+  div.nav-content.text-center
+    h2.h3
+      a[
+        href="#"
+      ]
+        | objectsforheads
+
+    ul.text-left.nav-list
+      li
+        h3
+          a[
+            href="#about"
+          ]
+            | About
+        ul.nav-sublist
+          li.h4
+            a[
+              href="#professionally"
+            ]
+              | Professionally
+          li.h4
+            a[
+              href="#personally"
+            ]
+              | Personally
+      li
+        h3
+          a[
+            href="#work"
+          ]
+            | Work
+        ul.nav-sublist
+          <% get_data('projects').each do |project| %>
+          li.h4
+            a[
+              href="#project_<%= slugify(project[:title]) %>"
+            ]
+              | <%= project[:title] %>
+          <% end %>
+          li.h4
+            a[
+              href="#project_you"
+            ]
+              | You
+      li
+        h3
+          a[
+            href="#collaboration"
+          ]
+            | Collaboration
