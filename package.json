@@ -5,9 +5,10 @@
   "dependencies": {},
   "scripts": {
     "compile": "bundle exec nanoc compile",
-    "watch": "onchange 'content/**/*' 'layouts/**/*' 'lib/**/*' 'Gemfile' 'nanoc.yaml' 'Rules' -- npm run compile",
+    "update-gems": "onchange 'Gemfile' -- bundle install",
+    "watch": "onchange 'content/**/*' 'layouts/**/*' 'lib/**/*' 'nanoc.yaml' 'Rules' -- npm run compile",
     "livereload": "browser-sync start --server 'output' --files './output/**/*'",
-    "dev": "run-p watch livereload",
+    "dev": "run-p watch livereload update-gems",
     "fork-output": "rm -rf public/*; cp -r output/* public/",
     "process-js": "babel public/js --out-dir public/js && minify public/js -d public/js",
     "process-css": "postcss public/css/**/* -d public/css -u autoprefixer --no-map && cleancss -o public/**/*.css public/**/*.css",
