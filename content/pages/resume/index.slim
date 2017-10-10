@@ -1,0 +1,55 @@
+---
+title: 'Resume'
+---
+
+div.resume
+  main.resume__experience
+    h2.resume__heading Experience
+
+    <% get_data('experience').each do |company| %>
+    div.resume__experience-card
+      h3 <%= company[:name] %> (<%= company[:type] %>) - <%= company[:title] %>
+
+      <% company[:projects].each do |project| %>
+      h4 <%= project[:title] %>
+
+      ul
+        <% project[:responsibilities].each do |responsibility| %>
+        li <%= responsibility %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+  aside.resume__skills.on-black
+    div.sticker
+      h1.sticker-content
+        span.upper objec
+        span.middle tsfor
+        span.lower heads
+
+    div.resume__contact-card
+      div.resume__contact-info
+        i.fa.fa-envelope-o
+        a[
+          href="mailto:hello@objectsforheads.com"
+        ]
+          | hello@objectsforheads.com
+      div.resume__contact-info
+        i.fa.fa-map-marker
+        | Portland, OR
+
+    h3 Skills & Competencies
+
+    <% get_data('proficiencies').each do |proficiency| %>
+    div.resume__skill-card
+      h4.resume__heading <%= proficiency[0] %>
+
+      <% proficiency[1].each do |subcategory| %>
+      h5 <%= subcategory[0] %>
+
+      ul
+        <% subcategory[1].each do |skill| %>
+          li <%= skill %>
+        <% end %>
+      <% end %>
+    <% end %>

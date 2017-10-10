@@ -1,0 +1,54 @@
+---
+name: experience
+kind: data
+data:
+  - :name: Copious
+    :type: Digital Web Agency
+    :title: Frontend Software Engineer
+    :projects:
+      - :title: Magento 2 re-platform for a global corporate brand
+        :responsibilities:
+          - Designed/implemented the frontend architecture
+          - Performed accessibility (WCAG) audits and ensured site compliance
+          - Implemented in-depth analytics tracking
+      - :title: Craft CMS-powered website for a nationwide construction software company
+        :responsibilities:
+          - Implemented technically complex static designs in a component-driven manner while ensuring cross-browser/cross-resolution/retina compatibility
+          - Improved ease of hand-off by preparing documentation for both content managers and developers
+
+  - :name: Raddish
+    :type: Home Cooking Startup
+    :title: Full-Stack Developer, Meteor.js Developer
+    :projects:
+      - :title: Meteor.js Core Web Application
+        :responsibilities:
+          - Developed entirety of the customer-facing application within a limited time frame
+          - Designed user experience from conceptual designs
+      - :title: Promotional Web Initiatives
+        :responsibilities:
+          - Created user experiences based on proposed initiative goals and limited brand direction
+          - Developed internal tools to aid in defining success criteria for initiative goals
+
+  - :name: Noma Creatives
+    :type: Creative Agency
+    :title: Full-Stack Developer
+    :projects:
+      - :title: Wordpress & Shopify Development for various startups and companies
+        :responsibilities:
+          - Developed BCG DV Torque’s (startup accelerator) website using Wordpress
+          - Designed & developed Bettina Warburg’s (Blockchain expert) portfolio using Wordpress
+          - Developed Entirely Me’s (clothing company) storefront on the Shopify Platform
+          - Developed for andthis, the Africa Talent Project, and Blockchain Technologies Lab (startups)
+
+  - :name: Retronator
+    :type: Video Game Developer
+    :title: Meteor.js Developer
+    :projects:
+      - :title: Meteor.js Application
+        :responsibilities:
+          - Contributed to the Pixel Art Academy (game) codebase and developed web assets
+      - :title: Promotional Material
+        :responsibilities:
+          - Designed and developed main landing page
+          - Developed an interactive promotional game and necessary internal tools
+---

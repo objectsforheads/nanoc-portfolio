@@ -21,7 +21,8 @@ end
 
 # compile but don't output partials
 compile '/partials/**/*.md' do
-  nil
+  filter :erb
+  filter :kramdown
 end
 
 compile '/partials/**/*.slim' do
@@ -33,6 +34,13 @@ end
 compile '/pages/**/*.md' do
   filter :erb
   filter :kramdown
+  layout '/default.*'
+  write item.identifier.without_ext.to_s.gsub('/pages/', '/') + '.html'
+end
+
+compile '/pages/**/*.slim' do
+  filter :erb
+  filter :slim
   layout '/default.*'
   write item.identifier.without_ext.to_s.gsub('/pages/', '/') + '.html'
 end
