@@ -14,6 +14,23 @@ preprocess do
 
 end
 
+# write /pages/* to /
+compile '/pages/**/*' do
+  filter :erb
+  filter :kramdown
+  layout '/default.*'
+  write item.identifier.without_ext.to_s.gsub('/pages/', '/') + '.html'
+end
+
+# write post assets to the right directory
+compile '/posts/**/*' do
+  filter :erb
+  filter :kramdown
+  layout '/default.*'
+  write item.identifier.without_ext.to_s.gsub('posts/', 'bloggery/posts/') + '.html'
+end
+
+# fallback compilation of markdown files
 compile '/**/*.md' do
   filter :erb
   filter :kramdown
@@ -35,21 +52,6 @@ end
 
 # passthrough js
 passthrough '/js/**/*.js'
-
-# route/posts/title-slug to /bloggery
-route '/posts/**/*.md' do
-  item.identifier.without_ext.to_s.gsub('posts/', 'bloggery/') + '.html'
-end
-
-# write post assets to the right directory
-compile '/posts/**/*' do
-  write item.identifier.to_s.gsub('posts/', 'bloggery/')
-end
-
-# route /pages/* to /
-route '/pages/**/*' do
-  item.identifier.without_ext.to_s.gsub('/pages/', '/') + '.html'
-end
 
 compile '/**/*' do
   write item.identifier.to_s
