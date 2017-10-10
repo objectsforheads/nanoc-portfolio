@@ -10,7 +10,7 @@
     "livereload": "browser-sync start --server 'output' --files './output/**/*'",
     "dev": "run-p watch livereload update-gems",
     "fork-output": "rm -rf public/*; cp -r output/* public/",
-    "process-js": "babel public/js --out-dir public/js && minify public/js -d public/js",
+    "process-js": "minify public/js -d public/js",
     "process-css": "postcss public/css/**/* -d public/css -u autoprefixer --no-map && cleancss -o public/**/*.css public/**/*.css",
     "git-commit": "cd public; git add *; git commit -m 'update portfolio static output'; git push",
     "deploy": "bundle exec nanoc compile && npm run fork-output && run-p process-js process-css && npm run git-commit"
