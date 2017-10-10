@@ -1,7 +1,24 @@
 #!/usr/bin/env ruby
 
-compile '/**/*.html' do
+preprocess do
+  # add tag pages
+  all_tags(articles).each do |tag|
+    path = "/bloggery/tagged/#{slugify(tag)}"
+    attributes = {
+      title: "Bloggery about <strong>#{tag}</strong>",
+      tagged: "#{tag}"
+    }
+
+    @items.create("<%= render '/bloggery/tagged.*' %>", attributes, "#{path}/index.md")
+  end
+
+end
+
+compile '/**/*.md' do
+  filter :erb
+  filter :kramdown
   layout '/default.*'
+  write item.identifier.without_ext.to_s + '.html'
 end
 
 # ignore partials
@@ -19,12 +36,6 @@ end
 # passthrough js
 passthrough '/js/**/*.js'
 
-# all posts written as .md files
-compile '/posts/**/*.md' do
-  filter :kramdown
-  layout '/default.*'
-end
-
 # route/posts/title-slug to /bloggery
 route '/posts/**/*.md' do
   item.identifier.without_ext.to_s.gsub('posts/', 'bloggery/') + '.html'
@@ -35,12 +46,9 @@ compile '/posts/**/*' do
   write item.identifier.to_s.gsub('posts/', 'bloggery/')
 end
 
-route '/**/*.{html,md}' do
-  if item.identifier =~ '/index.*'
-    '/index.html'
-  else
-    item.identifier.without_ext + '/index.html'
-  end
+# route /pages/* to /
+route '/pages/**/*' do
+  item.identifier.without_ext.to_s.gsub('/pages/', '/') + '.html'
 end
 
 compile '/**/*' do
